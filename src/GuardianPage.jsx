@@ -10,7 +10,7 @@ export default function GuardianPage() {
   // ✅ 메시지 검사
   const checkMessage = async () => {
     try {
-      const res = await fetch("http://172.20.10.6:5000/api/check-message", {
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/api/check-message`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ message }), // message 그대로 보냄
@@ -33,7 +33,7 @@ export default function GuardianPage() {
   // ✅ 사용자 신고
   const submitReport = async () => {
     try {
-      const res = await fetch("http://172.20.10.6:5000/api/report", {
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/api/report`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ type: reportType, value: reportValue }),

@@ -7,15 +7,15 @@ function App() {
   const [result, setResult] = useState(null);
   const navigate = useNavigate();
 
-  const checkMessage = async () => {
-    const res = await fetch("http://172.20.10.6:5000/api/check-message", {
+const checkMessage = async () => {
+  const res = await fetch(`${import.meta.env.VITE_API_URL}/api/check-message`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ message: input }),
   });
-    const data = await res.json();
-    setResult(data);
-  };
+  const data = await res.json();
+  setResult(data);
+};
 
   // ✅ 안드로이드 뒤로가기 버튼 처리
   useEffect(() => {

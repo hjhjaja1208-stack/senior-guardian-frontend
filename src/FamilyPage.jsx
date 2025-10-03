@@ -8,7 +8,7 @@ export default function FamilyPage() {
   const handleSave = async (e) => {
     e.preventDefault();
     try {
-      const res = await fetch("http://172.20.10.6:5000/api/save-family", {
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/api/save-family`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ phone }),
@@ -25,7 +25,7 @@ export default function FamilyPage() {
   const handleSend = async (e) => {
     e.preventDefault();
     try {
-      const res = await fetch("http://172.20.10.6:5000/api/send-sms", {
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/api/send-sms`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({

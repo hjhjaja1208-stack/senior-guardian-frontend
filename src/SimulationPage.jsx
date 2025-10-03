@@ -8,7 +8,7 @@ export default function SimulationPage() {
   useEffect(() => {
     const fetchVideos = async () => {
       try {
-        const res = await fetch("http://localhost:5000/api/simulations");
+        const res = await fetch("https://senior-guardian-app.onrender.com/simulations");
         const data = await res.json();
 
         if (Array.isArray(data) && data.length > 0) {
