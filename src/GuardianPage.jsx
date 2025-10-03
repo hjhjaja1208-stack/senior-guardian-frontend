@@ -78,7 +78,7 @@ export default function GuardianPage() {
           className="border-2 p-3 rounded-lg mr-3"
         >
           <option value="phone">전화번호</option>
-          <option value="url">URL</option>
+          <option value="account">계좌번호</option>
         </select>
         <input
           type="text"
